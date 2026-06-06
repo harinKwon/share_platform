@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="←"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:paddingEnd="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="제목이 들어옵니다"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_detail_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="작성자 | 2026.06.06"
+        android:textColor="#888888"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_detail_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="상세 내용이 출력됩니다."
+        android:textSize="16sp"
+        android:textColor="#333333"/>
+
+    <Button
+        android:id="@+id/btn_open_chat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="오픈채팅방으로 연락하기"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#000000"
+        android:textStyle="bold"/>
+</LinearLayout>
