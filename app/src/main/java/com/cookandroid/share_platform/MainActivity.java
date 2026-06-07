@@ -33,36 +33,39 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             binding.drawerLayout.closeDrawers();
         });
+
         //tradehistory
         binding.menuTradeHistory.setOnClickListener(v -> {
             Intent intent = new Intent(this, TransactionHistoryActivity.class);
             startActivity(intent);
             binding.drawerLayout.closeDrawers();
         });
+
         //addpost
         binding.fabAddPost.setOnClickListener(v -> {
             Intent intent = new Intent(this, AddPostActivity.class);
             intent.putExtra("userId", getIntent().getStringExtra("userId"));
             startActivity(intent);
         });
+
         //groupbuy
         binding.layoutGroupBuy.setOnClickListener(v -> {
             Intent intent = new Intent(this, PostListActivity.class);
-            intent.putExtra("title", "공동 구매"); // "category" -> "title"로 변경
+            intent.putExtra("title", "공동 구매");
             startActivity(intent);
         });
 
         //delivery
         binding.layoutDelivery.setOnClickListener(v -> {
             Intent intent = new Intent(this, PostListActivity.class);
-            intent.putExtra("title", "배달비 1/n"); // "category" -> "title"로 변경
+            intent.putExtra("title", "배달비 1/n");
             startActivity(intent);
         });
 
         //community
         binding.layoutCommunity.setOnClickListener(v -> {
             Intent intent = new Intent(this, PostListActivity.class);
-            intent.putExtra("title", "자유 커뮤니티"); // "category" -> "title"로 변경
+            intent.putExtra("title", "자유 커뮤니티");
             startActivity(intent);
         });
     }

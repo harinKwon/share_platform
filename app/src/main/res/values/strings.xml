@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">share_platform</string>
+    <string-array name="group_buy_categories">
+        <item>식료품</item>
+        <item>공산품</item>
+    </string-array>
+    <string-array name="delivery_categories">
+        <item>중식</item>
+        <item>일식</item>
+        <item>한식</item>
+        <item>양식</item>
+    </string-array>
 </resources>

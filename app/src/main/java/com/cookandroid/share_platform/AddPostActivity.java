@@ -1,12 +1,14 @@
 package com.cookandroid.share_platform;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import com.cookandroid.share_platform.databinding.ActivityAddPostBinding;
 
 public class AddPostActivity extends AppCompatActivity {
-
     private ActivityAddPostBinding binding;
 
     @Override
@@ -15,22 +17,34 @@ public class AddPostActivity extends AppCompatActivity {
         binding = ActivityAddPostBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.tvBack.setOnClickListener(v -> finish());
+        binding.rgCategoryMain.setOnCheckedChangeListener((group, checkedId) -> {
+            binding.rgDetailCategory.removeAllViews();
+            binding.rgDetailCategory.setVisibility(View.VISIBLE);
+            binding.rgDetailCategory.setAlpha(0f);
+            binding.rgDetailCategory.setTranslationY(50f);
 
-        //upload
-        binding.btnUpload.setOnClickListener(v -> {
-            String title = binding.etPostTitle.getText().toString();
-            String content = binding.etPostContent.getText().toString();
+            String[] items = (checkedId == R.id.rb_group_buy) ?
+                    getResources().getStringArray(R.array.group_buy_categories) :
+                    getResources().getStringArray(R.array.delivery_categories);
 
-            if (title.isEmpty() || content.isEmpty()) {
-                Toast.makeText(this, "제목과 내용을 모두 입력해주세요.", Toast.LENGTH_SHORT).show();
-                return;
+            for (int i = 0; i < items.length; i++) {
+                if (i >= 3) break;
+                RadioButton rb = new RadioButton(this);
+                rb.setText(items[i]);
+                RadioGroup.LayoutParams params = new RadioGroup.LayoutParams(
+                        0, RadioGroup.LayoutParams.WRAP_CONTENT, 1.0f);
+                rb.setLayoutParams(params);
+                binding.rgDetailCategory.addView(rb);
             }
 
-            Post newPost = new Post(title, content, "사용자1", "방금", 0, 0);
-
-            Toast.makeText(this, "등록 완료(서버 연결 대기중)", Toast.LENGTH_SHORT).show();
-            finish();
+            ObjectAnimator alphaAnim = ObjectAnimator.ofFloat(binding.rgDetailCategory, "alpha", 0f, 1f);
+            ObjectAnimator transAnim = ObjectAnimator.ofFloat(binding.rgDetailCategory, "translationY", 50f, 0f);
+            alphaAnim.setDuration(800);
+            transAnim.setDuration(800);
+            alphaAnim.start();
+            transAnim.start();
         });
+
+        binding.tvBack.setOnClickListener(v -> finish());
     }
 }
