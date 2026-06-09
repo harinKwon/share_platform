@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import com.cookandroid.share_platform.databinding.ActivityMainBinding;
+import android.view.View;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -41,13 +43,6 @@ public class MainActivity extends AppCompatActivity {
             binding.drawerLayout.closeDrawers();
         });
 
-        //addpost
-        binding.fabAddPost.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddPostActivity.class);
-            intent.putExtra("userId", getIntent().getStringExtra("userId"));
-            startActivity(intent);
-        });
-
         //groupbuy
         binding.layoutGroupBuy.setOnClickListener(v -> {
             Intent intent = new Intent(this, PostListActivity.class);
@@ -67,6 +62,41 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, PostListActivity.class);
             intent.putExtra("title", "자유 커뮤니티");
             startActivity(intent);
+        });
+        LinearLayout layoutGroupBuy = findViewById(R.id.layout_group_buy);
+        layoutGroupBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GroupBuyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout layoutDelivery = findViewById(R.id.layout_delivery);
+        layoutDelivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DeliveryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout layoutCommunity = findViewById(R.id.layout_community);
+        layoutCommunity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CommunityListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout layoutReview = findViewById(R.id.layout_review);
+        layoutReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ReviewListActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

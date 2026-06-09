@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/btn_back_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textSize="28sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:paddingEnd="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 작성하기"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_target_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="리뷰 대상자 이메일"
+        android:padding="15dp"
+        android:background="#F5F5F5"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="별점"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <RatingBar
+        android:id="@+id/rating_bar_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:layout_marginBottom="20dp"
+        android:theme="@style/Widget.AppCompat.RatingBar.Indicator"/>
+
+    <EditText
+        android:id="@+id/edit_review_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="리뷰 내용을 상세히 적어주세요."
+        android:gravity="top|start"
+        android:padding="15dp"
+        android:background="#F5F5F5"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btn_submit_review"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="등록하기"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:backgroundTint="#000000" />
+
+</LinearLayout>

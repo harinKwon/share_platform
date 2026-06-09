@@ -35,25 +35,6 @@
                 android:textColor="#000000"/>
         </LinearLayout>
 
-        <RadioGroup
-            android:id="@+id/rg_category_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
-            <RadioButton android:id="@+id/rb_group_buy" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="공동 구매"/>
-            <RadioButton android:id="@+id/rb_delivery" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="배달비 1/n"/>
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/rg_detail_category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            android:alpha="0"
-            android:layout_marginBottom="10dp" />
-
         <EditText
             android:id="@+id/et_product_name"
             android:layout_width="match_parent"

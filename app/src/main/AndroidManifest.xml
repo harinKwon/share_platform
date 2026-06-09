@@ -26,10 +26,17 @@
         <activity android:name=".SignupActivity" android:exported="false" />
         <activity android:name=".PostListActivity" android:exported="false" />
         <activity android:name=".TransactionHistoryActivity" android:exported="false" />
+        <activity android:name=".GroupBuyActivity" />
+        <activity android:name=".DeliveryActivity" />
+        <activity android:name=".CommunityListActivity" />
+        <activity android:name=".ReviewListActivity" />
+        <activity android:name=".AddReviewActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
     </application>
 
 </manifest>
